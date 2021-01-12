@@ -2,7 +2,6 @@ var task;
 var assignedTask = $("#assignedTask");
 var completedTask = $("#completedTask");
 document.querySelector("#taskAdd").addEventListener("click", function () {
-
     //storing input task in variable
     task = document.querySelector("#taskInput").value;
     //removing input
@@ -15,22 +14,16 @@ document.querySelector("#taskAdd").addEventListener("click", function () {
             completedTask.append($(this).parent(".item"))
         }else {
             assignedTask.append($(this).parent(".item"))
-        }
-        
-        
-    })
+        }  
+    });
     $(".edit").click(function(){
         if($(this).parent(".item").find(".editBox").val()== ""){
             $(this).prev().val($(this).parent(".item").find(".itemText").text());
         }else{
-            console.log("here")
             $(this).parent(".item").find(".itemText").text($(this).prev().val());
         }
-        
-    })
-
+    });
     $(".delete").click(function(){
         $(this).closest('.item').remove();
-    })
+    });
 });
-
